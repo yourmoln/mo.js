@@ -20,10 +20,10 @@ function sendurl(url,method,boole,sfun,para) {//url字符串,method字符串,boo
             sfun(xmlhttp.responseText);
         }
     }
-    if (method = "get"){
+    if (method == "get"){
         xmlhttps.open(method, url + "?" + para, boole);
         xmlhttps.send();
-    }else if(method = "post"){
+    }else if(method == "post"){
         xmlhttps.open(method, url, boole);
         xmlhttps.send(para);
     }else{
