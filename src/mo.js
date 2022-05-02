@@ -2,6 +2,10 @@ function $$(dom){//eg:$$("id")
     return document.getElementById(dom);
 }
 
+function $$$(dom){//eg:$$$("class")
+    return document.getElementsByClassName(dom);
+}
+
 function sendurl(url,method,boole,sfun,para) {//url字符串,method字符串,boole布尔值(是否异步),sfun成功函数,para参数字符串
     //eg:
     //function ssfun(text){alert(text);}
