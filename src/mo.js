@@ -17,7 +17,7 @@ function sendurl(url,method,boole,sfun,para) {//url字符串,method字符串,boo
     }
     xmlhttps.onreadystatechange = function () {
         if (xmlhttps.readyState == 4 && xmlhttps.status == 200) {
-            sfun(xmlhttp.responseText);
+            sfun(xmlhttps.responseText);
         }
     }
     if (method == "get"){
