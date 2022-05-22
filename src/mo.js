@@ -25,6 +25,7 @@ function sendurl(url,method,boole,sfun,para) {//url字符串,method字符串,boo
         xmlhttps.send();
     }else if(method == "post"){
         xmlhttps.open(method, url, boole);
+        xmlhttps.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xmlhttps.send(para);
     }else{
         console.log("error:方法名输入错误,应该为'post'或'get'");
