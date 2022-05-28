@@ -6,10 +6,11 @@ function $$$(dom){//eg:$$$("class")
     return document.getElementsByClassName(dom);
 }
 
-function sendurl(url,method,boole,sfun,para) {//url字符串,method字符串,boole布尔值(是否异步),sfun成功函数,para参数字符串
+function mo_ajax(url,method,boole,sfun,ffun,para) {//url字符串,method字符串,boole布尔值(是否异步),sfun成功函数,ffun失败函数,para参数字符串
     //eg:
     //function ssfun(text){alert(text);}
-    //sendurl('http://a.com','post',true,ssfun,'a=1&b=2')
+    //function fffun(){alert('fail');}
+    //sendurl('http://a.com','post',true,ssfun,fffun,'a=1&b=2')
     if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
     xmlhttps = new XMLHttpRequest();
     }else{// code for IE6, IE5
@@ -18,6 +19,8 @@ function sendurl(url,method,boole,sfun,para) {//url字符串,method字符串,boo
     xmlhttps.onreadystatechange = function () {
         if (xmlhttps.readyState == 4 && xmlhttps.status == 200) {
             sfun(xmlhttps.responseText);
+        }else{
+            ffun();
         }
     }
     if (method == "get"){
