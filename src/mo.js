@@ -19,7 +19,7 @@ function mo_ajax(url,method,boole,sfun,ffun,para) {//url字符串,method字符�
     xmlhttps.onreadystatechange = function () {
         if (xmlhttps.readyState == 4 && xmlhttps.status == 200) {
             sfun(xmlhttps.responseText);
-        }else{
+        }else if (typeof(ffun) != "undefined" && ffun != null){
             ffun();
         }
     }
